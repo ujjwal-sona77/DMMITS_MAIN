@@ -146,7 +146,6 @@ gsap.to(".page2_1st", {
         start: "top 75%",
         end: "bottom 10%",
         scrub: 1,
-        markers: true,
     },
     opacity: 1,
     duration: 1,
