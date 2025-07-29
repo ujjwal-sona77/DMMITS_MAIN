@@ -6,6 +6,7 @@
 html,
 body {
   height: 100%;
+  background-color: #111;
   width: 100%;
 }
 
@@ -21,9 +22,8 @@ body {
 }
 
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.329);
+  background: transparent;
   padding: 1rem;
-  backdrop-filter: blur(10px);
 }
 
 .navbar-container {
@@ -135,18 +135,125 @@ body {
   transform: translateY(50%) rotate(-45deg);
 }
 
-/* Hover Effects */
+/* Modern Magnetic Hover Effect */
+@keyframes neonFlicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+    filter: brightness(1);
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+    filter: brightness(0.8);
+  }
+}
+
+.nav-item {
+  position: relative;
+  padding: 0.5em 1em;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: white;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(
+    45deg,
+    rgba(74, 144, 226, 0.1) 0%,
+    rgba(74, 144, 226, 0.2) 50%,
+    rgba(74, 144, 226, 0.1) 100%
+  );
+  border-radius: 50%;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: -1;
+}
+
 .nav-item:hover {
   color: #4a90e2;
   transform: scale(1.1);
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(74, 144, 226, 0.8);
+  animation: neonFlicker 2s infinite;
+}
+
+.nav-item:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4a90e2, transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+}
+
+.logo {
+  position: relative;
+  padding: 0.5em;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(74, 144, 226, 0.2) 0%,
+    transparent 70%
+  );
+  transition: transform 0.6s ease;
+  transform: translate(100%, 100%) rotate(45deg);
 }
 
 .logo:hover {
-  opacity: 0.8;
+  color: #4a90e2;
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.8),
+    0 0 20px rgba(74, 144, 226, 0.4);
+  letter-spacing: 1px;
+}
+
+.logo:hover::before {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .main {
-  background-color: #c3a4a1;
+  background-color: #111;
+  color: white;
 }
 .main_hero {
   font-weight: 400;
@@ -166,6 +273,7 @@ body {
   width: 100%;
   font-size: 100px;
   overflow-x: hidden;
+  overflow-y: hidden;
   white-space: nowrap;
   font-family: "Bitcount Single";
 }
@@ -180,25 +288,272 @@ body {
 }
 
 .page2 {
+  width: 100%;
+  height: 55vh;
   position: relative;
-  padding: 2vw;
+  display: flex;
+  /* background-color: red; */
 }
 
-.page2_1st {
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Playwrite+HU:wght@100..400&family=Playwrite+PL:wght@100..400&display=swap");
+
+.left {
+  /* background-color: green; */
+  width: 50%;
+  height: 100%;
   position: relative;
-  top: -15%;
-  opacity: 0;
-  font-size: 4vw;
+  padding: 1.95vw;
 }
-.page2_2nd {
+
+.left h1 {
+  font-size: 4vw;
+  opacity: 0;
+}
+
+.left span {
+  font-family: "Playwrite PL", cursive;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Playwrite+PL:wght@100..400&display=swap");
+
+.left h4 {
+  width: 50%;
+  opacity: 0;
+  font-family: "Playwrite AU QLD", cursive;
+  font-size: 1.5vw;
+}
+.main {
+  overflow: hidden;
+}
+
+.right {
+  /* background-color: blue; */
+  position: relative;
+  top: 7.5%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 2.15vw;
+}
+
+.right h1 {
+  font-size: 4vw;
+  opacity: 0;
+}
+
+.right h4 {
+  width: 50%;
+  font-family: "Playwrite AU QLD", cursive;
+  font-size: 1.5vw;
+  opacity: 0;
+}
+
+#opp {
+  font-family: "Playwrite PL", cursive;
+}
+
+@media (max-width: 768px) {
+  canvas {
+    position: fixed;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+/* From Uiverse.io by Smit-Prajapati */
+.card {
+  width: 300px;
+  height: 200px;
+  background: #243137;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+#logo-main,
+#logo-second {
+  height: 100%;
+}
+
+#logo-main {
+  fill: #bd9f67;
+}
+
+#logo-second {
+  padding-bottom: 10px;
+  fill: none;
+  stroke: #bd9f67;
+  stroke-width: 1px;
+}
+
+.border {
   position: absolute;
-  top: -15%;
-  /* left: 65%; */
-  right: 7%;
+  inset: 0px;
+  border: 2px solid #bd9f67;
   opacity: 0;
-  font-size: 4vw;
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
 }
 
-#era {
-  font-family: "Playwrite HU", cursive;
+.bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  transform: translateX(-50%);
+  font-size: 6px;
+  text-transform: uppercase;
+  padding: 0px 5px 0px 8px;
+  color: #bd9f67;
+  background: #243137;
+  opacity: 0;
+  letter-spacing: 7px;
+  transition: all 0.5s ease-in-out;
 }
+
+.content {
+  transition: all 0.5s ease-in-out;
+}
+
+.content .logo {
+  height: 35px;
+  position: relative;
+  width: 33px;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.content .logo .logo1 {
+  height: 33px;
+  position: absolute;
+  left: 0;
+}
+
+.content .logo .logo2 {
+  height: 33px;
+  position: absolute;
+  left: 33px;
+}
+
+.content .logo .trail {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 99;
+}
+
+.content .logo-bottom-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+  color: #bd9f67;
+  padding-left: 8px;
+  font-size: 11px;
+  opacity: 0;
+  letter-spacing: none;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+.card:hover {
+  border-radius: 0;
+  transform: scale(1.1);
+}
+
+.card:hover .logo {
+  width: 134px;
+  animation: opacity 1s ease-in-out;
+}
+
+.card:hover .border {
+  inset: 15px;
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.card:hover .bottom-text {
+  letter-spacing: 3px;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+.card:hover .content .logo-bottom-text {
+  opacity: 1;
+  letter-spacing: 9.5px;
+}
+
+.card:hover .trail {
+  animation: trail 1s ease-in-out;
+}
+
+@keyframes opacity {
+  0% {
+    border-right: 1px solid transparent;
+  }
+
+  10% {
+    border-right: 1px solid #bd9f67;
+  }
+
+  80% {
+    border-right: 1px solid #bd9f67;
+  }
+
+  100% {
+    border-right: 1px solid transparent;
+  }
+}
+
+@keyframes trail {
+  0% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 90%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 0;
+  }
+
+  30% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 70%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 1;
+  }
+
+  70% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 70%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 1;
+  }
+
+  95% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 90%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 0;
+  }
+}
+
+
