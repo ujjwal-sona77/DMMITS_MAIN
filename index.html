@@ -1,205 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Playwrite+HU:wght@100..400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/lenis@1.3.8/dist/lenis.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-<div class="loader-wrapper">
-  <span class="loader-letter">G</span>
-  <span class="loader-letter">e</span>
-  <span class="loader-letter">n</span>
-  <span class="loader-letter">e</span>
-  <span class="loader-letter">r</span>
-  <span class="loader-letter">a</span>
-  <span class="loader-letter">t</span>
-  <span class="loader-letter">i</span>
-  <span class="loader-letter">n</span>
-  <span class="loader-letter">g</span>
-
-  <div class="loader"></div>
-</div>
-
-    </div>
-
-    <div class="main w-full h-[550vh]">
-      <!-- Canvas as background -->
-      <div class="canvas-bg fixed inset-0 z-0">
-        <canvas class="w-full h-screen"></canvas>
-        <div class="canvas-gradient-overlay bg-gradient-to-b from-transparent to-black"></div>
-      </div>
-
-      <!-- Floating Navigation -->
-      <nav class="navbar glassy-nav fixed top-0 left-0 w-full z-20">
-        <div class="navbar-container">
-          <a href="#" class="logo gradient-logo">GenAI</a>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="nav-menu">
-            <a href="#" class="nav-item" data-text="Home">Home</a>
-            <a href="#" class="nav-item" data-text="About">About</a>
-            <a href="#" class="nav-item" data-text="Work">Work</a>
-            <a href="#" class="nav-item" data-text="Contact">Contact</a>
-          </div>
-        </div>
-      </nav>
-
-
-      <!-- Hero Section -->
-      <section class="hero-section flex flex-col items-center justify-center min-h-screen relative z-10" id="section-hero">
-        <h1 class="hero-title text-7xl md:text-9xl font-extrabold text-white text-center">
-          <span class="gradient-text">GenAI</span>
-        </h1>
-        <p class="hero-subtitle text-2xl md:text-3xl text-white/80 mt-6 text-center max-w-2xl">
-          Where Imagination Meets Intelligence
-        </p>
-        <div class="scroll-indicator mt-16">
-          <div class="mouse"><div class="wheel"></div></div>
-          <div class="mt-2 text-sm text-white/50">Scroll to explore</div>
-        </div>
-      </section>
-
-      <!-- What is GenAI Section -->
-      <section class="about-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-about">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">What is Generative AI?</h2>
-          <p class="text-xl text-white/80 mb-8">Generative AI (GenAI) is a branch of artificial intelligence that can create new content, ideas, and solutions. It powers everything from text and image generation to music, code, and even scientific discovery.</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div class="p-8 glassy-card rounded-2xl">
-              <h3 class="text-2xl font-bold mb-2 gradient-text">How it Works</h3>
-              <p class="text-white/80">GenAI uses neural networks and deep learning to understand patterns and generate new data that mimics human creativity.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.8/dist/lenis.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main w-full h-[550vh]">
+            <!-- Canvas as background -->
+            <div class="canvas-bg fixed inset-0 z-0">
+                <canvas class="w-full h-screen"></canvas>
+                <div class="canvas-gradient-overlay bg-gradient-to-b from-transparent to-black"></div>
             </div>
-            <div class="p-8 glassy-card rounded-2xl">
-              <h3 class="text-2xl font-bold mb-2 gradient-text">Why it Matters</h3>
-              <p class="text-white/80">It enables automation, personalization, and innovation at a scale never seen before, transforming industries and daily life.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features Section -->
-      <section class="features-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-features">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-5xl md:text-6xl font-bold mb-12 text-center gradient-text">GenAI Features</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="feature-card glassy-card p-8 rounded-2xl text-center">
-              <h3 class="text-2xl font-bold mb-2 gradient-text">Text Generation</h3>
-              <p class="text-white/80">Write articles, stories, and more with human-like fluency.</p>
-            </div>
-            <div class="feature-card glassy-card p-8 rounded-2xl text-center">
-              <h3 class="text-2xl font-bold mb-2 gradient-text">Image Synthesis</h3>
-              <p class="text-white/80">Create and edit images, art, and designs with AI.</p>
-            </div>
-            <div class="feature-card glassy-card p-8 rounded-2xl text-center">
-              <h3 class="text-2xl font-bold mb-2 gradient-text">Code Intelligence</h3>
-              <p class="text-white/80">Generate, review, and optimize code automatically.</p>
-            </div>
-            <div class="feature-card glassy-card p-8 rounded-2xl text-center">
-              <h3 class="text-2xl font-bold mb-2 gradient-text">Voice & Music</h3>
-              <p class="text-white/80">Produce natural speech and compose original music.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Use Cases Section -->
-      <section class="usecases-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-usecases">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-5xl md:text-6xl font-bold mb-12 text-center gradient-text">Real-World Use Cases</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="usecase-card glassy-card p-8 rounded-2xl">
-              <h3 class="text-xl font-bold mb-2 gradient-text">Healthcare</h3>
-              <p class="text-white/80">AI-driven diagnostics, drug discovery, and personalized medicine.</p>
-            </div>
-            <div class="usecase-card glassy-card p-8 rounded-2xl">
-              <h3 class="text-xl font-bold mb-2 gradient-text">Education</h3>
-              <p class="text-white/80">Personalized learning, content creation, and tutoring bots.</p>
-            </div>
-            <div class="usecase-card glassy-card p-8 rounded-2xl">
-              <h3 class="text-xl font-bold mb-2 gradient-text">Business</h3>
-              <p class="text-white/80">Automated reports, customer support, and market analysis.</p>
-            </div>
-            <div class="usecase-card glassy-card p-8 rounded-2xl">
-              <h3 class="text-xl font-bold mb-2 gradient-text">Entertainment</h3>
-              <p class="text-white/80">AI-generated music, scripts, and interactive experiences.</p>
-            </div>
-            <div class="usecase-card glassy-card p-8 rounded-2xl">
-              <h3 class="text-xl font-bold mb-2 gradient-text">Science</h3>
-              <p class="text-white/80">Accelerated research, simulations, and data analysis.</p>
-            </div>
-            <div class="usecase-card glassy-card p-8 rounded-2xl">
-              <h3 class="text-xl font-bold mb-2 gradient-text">Everyday Life</h3>
-              <p class="text-white/80">Smart assistants, creative tools, and productivity boosters.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section class="testimonials-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-testimonials">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-5xl md:text-6xl font-bold mb-12 gradient-text">What People Say</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="testimonial-card glassy-card p-8 rounded-2xl">
-              <p class="text-white/80 mb-4">“GenAI helped us automate our content pipeline and boost creativity across the team.”</p>
-              <div class="font-bold gradient-text">— Alex, Product Manager</div>
-            </div>
-            <div class="testimonial-card glassy-card p-8 rounded-2xl">
-              <p class="text-white/80 mb-4">“The image and code generation features are game-changers for our workflow.”</p>
-              <div class="font-bold gradient-text">— Priya, Developer</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call to Action Section -->
-      <section class="cta-section min-h-[60vh] flex flex-col justify-center items-center px-4 py-24 relative z-10 bg-gradient-to-r from-blue-900/60 to-purple-900/60">
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Ready to Build with GenAI?</h2>
-          <p class="text-xl text-white/80 mb-8">Join the revolution and unlock the power of generative intelligence for your projects.</p>
-          <a href="#" class="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-bold text-xl shadow-lg hover:scale-105 transition">Get Started</a>
-        </div>
-      </section>
- 
-
-    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
-      integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
-
-    <script src="script.js"></script>
-  </body>
-</html>
+            <!-- Floating Navigation -->
+            <nav class="navbar glassy-nav fixed top-0 left-0 w-full z-20">
+                <div class="navbar-container">
+                    <a href="#" class="logo gradient-logo">GenAI</a>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="#" class="nav-item" data-text="Home">Home</a>
+                        <a href="#" class="nav-item" data-text="About">About</a>
+                        <a href="#" class="nav-item" data-text="Work">Work</a>
+                        <a href="#" class="nav-item" data-text="Contact">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Hero Section -->
+            <section class="hero-section flex flex-col items-center justify-center min-h-screen relative z-10" id="section-hero">
+                <h1 class="hero-title text-7xl md:text-9xl font-extrabold text-white text-center">
+                    <span class="gradient-text">GenAI</span>
+                </h1>
+                <p class="hero-subtitle text-2xl md:text-3xl text-white/80 mt-6 text-center max-w-2xl">
+                    Where Imagination Meets Intelligence
+                </p>
+                <div class="scroll-indicator mt-16">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div class="mt-2 text-sm text-white/50">Scroll to explore</div>
+                </div>
+            </section>
+            <!-- What is GenAI Section -->
+            <section class="about-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-about">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">What is Generative AI?</h2>
+                    <p class="text-xl text-white/80 mb-8">Generative AI (GenAI) is a branch of artificial intelligence that can create new content, ideas, and solutions. It powers everything from text and image generation to music, code, and even scientific discovery.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                        <div class="p-8 glassy-card rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-2 gradient-text">How it Works</h3>
+                            <p class="text-white/80">GenAI uses neural networks and deep learning to understand patterns and generate new data that mimics human creativity.</p>
+                        </div>
+                        <div class="p-8 glassy-card rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-2 gradient-text">Why it Matters</h3>
+                            <p class="text-white/80">It enables automation, personalization, and innovation at a scale never seen before, transforming industries and daily life.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Features Section -->
+            <section class="features-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-features">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-12 text-center gradient-text">GenAI Features</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="feature-card glassy-card p-8 rounded-2xl text-center">
+                            <h3 class="text-2xl font-bold mb-2 gradient-text">Text Generation</h3>
+                            <p class="text-white/80">Write articles, stories, and more with human-like fluency.</p>
+                        </div>
+                        <div class="feature-card glassy-card p-8 rounded-2xl text-center">
+                            <h3 class="text-2xl font-bold mb-2 gradient-text">Image Synthesis</h3>
+                            <p class="text-white/80">Create and edit images, art, and designs with AI.</p>
+                        </div>
+                        <div class="feature-card glassy-card p-8 rounded-2xl text-center">
+                            <h3 class="text-2xl font-bold mb-2 gradient-text">Code Intelligence</h3>
+                            <p class="text-white/80">Generate, review, and optimize code automatically.</p>
+                        </div>
+                        <div class="feature-card glassy-card p-8 rounded-2xl text-center">
+                            <h3 class="text-2xl font-bold mb-2 gradient-text">Voice & Music</h3>
+                            <p class="text-white/80">Produce natural speech and compose original music.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Use Cases Section -->
+            <section class="usecases-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-usecases">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-12 text-center gradient-text">Real-World Use Cases</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="usecase-card glassy-card p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-2 gradient-text">Healthcare</h3>
+                            <p class="text-white/80">AI-driven diagnostics, drug discovery, and personalized medicine.</p>
+                        </div>
+                        <div class="usecase-card glassy-card p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-2 gradient-text">Education</h3>
+                            <p class="text-white/80">Personalized learning, content creation, and tutoring bots.</p>
+                        </div>
+                        <div class="usecase-card glassy-card p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-2 gradient-text">Business</h3>
+                            <p class="text-white/80">Automated reports, customer support, and market analysis.</p>
+                        </div>
+                        <div class="usecase-card glassy-card p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-2 gradient-text">Entertainment</h3>
+                            <p class="text-white/80">AI-generated music, scripts, and interactive experiences.</p>
+                        </div>
+                        <div class="usecase-card glassy-card p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-2 gradient-text">Science</h3>
+                            <p class="text-white/80">Accelerated research, simulations, and data analysis.</p>
+                        </div>
+                        <div class="usecase-card glassy-card p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold mb-2 gradient-text">Everyday Life</h3>
+                            <p class="text-white/80">Smart assistants, creative tools, and productivity boosters.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials Section -->
+            <section class="testimonials-section min-h-screen flex flex-col justify-center items-center px-4 py-24 relative z-10" id="section-testimonials">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-12 gradient-text">What People Say</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="testimonial-card glassy-card p-8 rounded-2xl">
+                            <p class="text-white/80 mb-4">“GenAI helped us automate our content pipeline and boost creativity across the team.”</p>
+                            <div class="font-bold gradient-text">— Alex, Product Manager</div>
+                        </div>
+                        <div class="testimonial-card glassy-card p-8 rounded-2xl">
+                            <p class="text-white/80 mb-4">“The image and code generation features are game-changers for our workflow.”</p>
+                            <div class="font-bold gradient-text">— Priya, Developer</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Call to Action Section -->
+            <section class="cta-section min-h-[60vh] flex flex-col justify-center items-center px-4 py-24 relative z-10 bg-gradient-to-r from-blue-900/60 to-purple-900/60">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Ready to Build with GenAI?</h2>
+                    <p class="text-xl text-white/80 mb-8">Join the revolution and unlock the power of generative intelligence for your projects.</p>
+                    <a href="#" class="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-bold text-xl shadow-lg hover:scale-105 transition">Get Started</a>
+                </div>
+            </section>
+            <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+                integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+            ></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+                integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer"
+            ></script>
+            <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+            <script src="script.js"></script>
+        </body>
+    </html>
